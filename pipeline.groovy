@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('pull the code') {
             steps {
-                echo 'Building...'
+                git branch: 'devops', url: 'https://github.com/alkesh-007/EasyCRUD.git'
             }
         }
-        stage('Test') {
+        stage('build') {
             steps {
-                echo 'Testing...'
+                sh 'mvn clean package'
             }
         }
         stage('Deploy') {
