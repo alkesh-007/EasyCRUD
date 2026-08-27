@@ -30,3 +30,5 @@ services:
 
 volumes:
   mariadb_data:
+
+#docker-compose file for easycrud project
