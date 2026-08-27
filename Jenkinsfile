@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''docker compose build 
+                sh '''docker-compose build 
                 '''
             }
         }
         stage('start') {
             steps {
-                sh '''docker compose up -d
+                sh '''docker-compose up -d
                 '''
             }
         }
         stage('list-containers') {
             steps {
-                sh '''docker compose ps
+                sh '''docker-compose ps
                 '''
             }
         }
